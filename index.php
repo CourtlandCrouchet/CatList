@@ -41,14 +41,14 @@
         <?php
             //Get image data for the selected breed
             $urlstring = "https://api.thecatapi.com/v1/images/search?breed_id=" . $breed_id;
-            $images = json_decode(file_get_contents($urlstring,));
+            $images = json_decode(file_get_contents($urlstring));
         ?>
         <!-- Selected Breed Image -->
         <img src="<?php echo $images[0]->url ?>" alt="<?= $dataj[$i]->id ?>" width="100" , height="100"> </img>
         <?php
             //Get info about the selected cat breed
             $urlstring = "https://api.thecatapi.com/v1/breeds/" . $breed_id;
-            $breed = json_decode(file_get_contents($urlstring,));
+            $breed = json_decode(file_get_contents($urlstring));
         ?>
         <!-- Selected Breed Name -->
         <div>Name: <?= $breed->name ?></div>
