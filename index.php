@@ -7,7 +7,7 @@
             $base = $_SERVER['PHP_SELF'];
             $limit = $_GET["limit"] ?? 5;
             $page = $_GET["page"] ?? 0;
-            $breed_id = $_GET["breed_id"];
+            $breed_id = $_GET["breed_id"] ?? "abys";
             $data = file_get_contents("https://api.thecatapi.com/v1/breeds?limit=" . $limit . "&page=" . $page);
             $dataj = json_decode($data);
 
