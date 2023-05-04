@@ -5,11 +5,15 @@
         <?php
             // Request Variables
             $base = $_SERVER['PHP_SELF'];
-            $limit = $_GET["limit"] ?? 3;
+            $limit = $_GET["limit"] ?? 5;
             $page = $_GET["page"] ?? 0;
             $breed_id = $_GET["breed_id"];
             $data = file_get_contents("https://api.thecatapi.com/v1/breeds?limit=" . $limit . "&page=" . $page);
             $dataj = json_decode($data);
+
+            //Ensure that $limit is >=5 and <=10
+            if($limit < 5) $limit = 5;
+            else if($limit > 10) $limit = 10
         ?>
         <!-- Navbar -->
         <div>
