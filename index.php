@@ -31,12 +31,12 @@
                 $dataj = json_decode($data);
             ?>
             <?php foreach ($dataj as $i => $value) : ?>
+                <!-- Cat Breed List Item -->
                 <li>
                     <?php $link = $base . "?limit=" . $limit . "&page=" . $page . "&breed_id=" . $dataj[$i]->id; ?>
                     <a href="<?= $link ?>">
                         <div>
                             <?php echo $dataj[$i]->name; ?>
-                            <!-- <img src="<?php echo $cats[0]->url ?>" width="100", height="100"> </img> -->
                         </div>
                     </a>
                 </li>
