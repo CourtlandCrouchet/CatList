@@ -1,5 +1,7 @@
 <html>
-
+<head>
+    <link rel="stylesheet" href="main.css">
+</head>
 <body>
     <div>
         <?php
@@ -49,10 +51,10 @@
         ?>
         <!-- Selected Breed Image -->
         <img 
-        src="<?php echo $images[0]->url ?>" 
-        alt="<?= $dataj[$i]->id ?>" 
-        width="<?= $images[0]->width ?>px"
-        height="<?= $images[0]->height ?>px"> </img>
+            src="<?php echo $images[0]->url ?>" 
+            alt="<?= $dataj[$i]->id ?>" 
+            width="<?= $images[0]->width ?>px"
+            height="<?= $images[0]->height ?>px"> </img>
         <?php
             //Get info about the selected cat breed
             $urlstring = "https://api.thecatapi.com/v1/breeds/" . $breed_id;
