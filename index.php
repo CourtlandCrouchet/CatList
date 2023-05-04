@@ -51,8 +51,8 @@
         <img 
         src="<?php echo $images[0]->url ?>" 
         alt="<?= $dataj[$i]->id ?>" 
-        width="<? $dataj[$i]->width ?>px"
-        height="<? $dataj[$i]->height ?>px"> </img>
+        width="<?= $images[0]->width ?>px"
+        height="<?= $images[0]->height ?>px"> </img>
         <?php
             //Get info about the selected cat breed
             $urlstring = "https://api.thecatapi.com/v1/breeds/" . $breed_id;
