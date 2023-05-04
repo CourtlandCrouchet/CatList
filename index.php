@@ -60,6 +60,8 @@
         ?>
         <!-- Selected Breed Name -->
         <div>Name: <?= $breed->name ?></div>
+        <!-- Wikipedia Link -->
+        <a href="<?= $breed->wikipedia_url ?>">More Info</a>
     </div>
 </body>
 
