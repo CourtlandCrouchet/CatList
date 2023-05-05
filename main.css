@@ -1,0 +1,117 @@
+body {
+    margin: 0;
+    background-color: #88a1ff;
+    font-family: 'Helvetica';
+}
+#container {
+    z-index: 1;
+}
+
+/* Loading Screen to hide page initialization */
+#loading-screen {
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #88a1ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 72px;
+    transition: opacity 1s;
+}
+#loading-screen.fade-out {
+    opacity: 0;
+}
+
+.row {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+/* Navbar */
+.navbar {
+    width: 100%;
+    border-bottom: 2px solid black;
+    display: flex;
+    margin-bottom: 2vh;
+    background: linear-gradient(to bottom, rgb(235, 234, 234), rgb(228, 227, 227), rgb(196, 196, 196));
+}
+.navbar>div {
+    font-size: 30px;
+    user-select: none;
+    cursor: pointer;
+    padding: 0.2em 0.5em;
+    border-right: 1px solid black;
+    transition: all .2s;
+}
+.navbar>div:not(.disabled, #page-number):hover {
+    background-color: #a8eaff;
+}
+.navbar>div.disabled {
+    cursor: default;
+    background-color: #9f9f9f;
+}
+.navbar>#page-number {
+    flex-grow: 1;
+    border: none;
+    padding-right: 1.5em;
+    text-align: right;
+    cursor: default;
+}
+
+.col-left {
+    margin-right: 5%;
+}
+
+/* Breed List */
+ul {
+    list-style-type: none;
+}
+li {
+    padding: .75em;
+    margin-bottom: .4em;
+    font-size: 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+    transition: all .2s;
+    user-select: none;
+    cursor: pointer;
+    background-color: white;
+    box-shadow: 1px 1px 5px 0 black;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, .26);
+}
+li.active {
+    background-color: #dbdbfd;
+    border: 2px solid black;
+}
+li:hover {
+    background-color: #babaf1;
+}
+::marker {
+    display: none;
+}
+
+/* Selected Breed */
+#selected-breed-info {
+    font-size: 24px;
+    padding: 0.5em;
+    justify-content: space-between;
+}
+#selected-breed-info>* {
+    margin-right: 1em;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, .26);
+}
+img {
+    box-shadow: 1px 1px 5px 1px black;
+}
+#no-image-msg {
+    height: 400px;
+    width: 500px;
+    font-size: 32px;
+    padding: 30% 5% 0 5%;
+    text-align: center;
+    color: rgb(68, 68, 68);
+}
