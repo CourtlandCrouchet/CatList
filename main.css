@@ -4,11 +4,15 @@ body {
 .row {
     width: 100%;
     display: flex;
+    align-items: center;
 }
+
+/* Navbar */
 .navbar {
     border-bottom: 1px solid black;
     /* padding: 1em 0 1em 1em; */
     display: flex;
+    margin-bottom: 2vh;
 }
 .navbar>a {
     font-size: 20px;
@@ -39,4 +43,29 @@ body {
     text-align: right;
     background-color: white;
     cursor: default;
+}
+
+.col-left {
+    margin-right: 5%;
+}
+
+/* Breed List */
+ul {
+    list-style-type: none;
+}
+li {
+    padding: .75em;
+    margin-bottom: .4em;
+    font-size: 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+    transition: all .2s;
+    user-select: none;
+    cursor: pointer;
+}
+li:hover {
+    background-color: #babaf1;
+}
+::marker {
+    display: none;
 }

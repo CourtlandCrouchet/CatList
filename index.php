@@ -37,6 +37,7 @@
             <?php endif; ?>
 
             <!-- Next Page Button -->
+            <!-- Disable Next Button if next page would have no data -->
             <?php if(($page+1) * $limit >= CAT_LIMIT) : ?>
                 <div class="disabled">Next</div>
             <?php else : ?>
@@ -58,13 +59,18 @@
                     ?>
                     <?php foreach ($dataj as $i => $value) : ?>
                         <!-- Cat Breed List Item -->
-                        <li>
-                            <?php $link = $base . "?limit=" . $limit . "&page=" . $page . "&breed_id=" . $dataj[$i]->id; ?>
-                            <a href="<?= $link ?>">
+                        <?php $link = $base . "?limit=" . $limit . "&page=" . $page . "&breed_id=" . $dataj[$i]->id; ?>
+                        <li onclick="window.location.href='<?= $link ?>'"
+                        class="breed-btn<? if($dataj[$i]->id == $breed_id) echo ' active'?>">
+                            <!-- <a href="<?= $link ?>">
                                 <div>
                                     <?php echo $dataj[$i]->name; ?>
                                 </div>
-                            </a>
+                            </a> -->
+                            <!-- <div onclick="window.location.href='<?= $link ?>'"> -->
+                            <div>
+                                <?= $dataj[$i]->name; ?>
+                            </div>
                         </li>
                     <?php endforeach ?>
                 </ul>
