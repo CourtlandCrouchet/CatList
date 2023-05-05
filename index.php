@@ -3,7 +3,7 @@
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
-    <div>
+    <div id="container">
         <?php
             // Request Variables
             $base = $_SERVER['PHP_SELF'];
@@ -52,22 +52,11 @@
             <div class="col-left">
                 <!-- Cat Breed Link List -->
                 <ul>
-                    <?php
-                        //Get list of breeds using limit and page offset provided in request variables
-                        // $data = file_get_contents("https://api.thecatapi.com/v1/breeds?limit=" . $limit . "&page=" . $page);
-                        // $dataj = json_decode($data);
-                    ?>
                     <?php foreach ($dataj as $i => $value) : ?>
                         <!-- Cat Breed List Item -->
                         <?php $link = $base . "?limit=" . $limit . "&page=" . $page . "&breed_id=" . $dataj[$i]->id; ?>
                         <li onclick="window.location.href='<?= $link ?>'"
                         class="breed-btn<?= $dataj[$i]->id == $breed_id ? ' active' : '' ?>">
-                            <!-- <a href="<?= $link ?>">
-                                <div>
-                                    <?php echo $dataj[$i]->name; ?>
-                                </div>
-                            </a> -->
-                            <!-- <div onclick="window.location.href='<?= $link ?>'"> -->
                             <div>
                                 <?= $dataj[$i]->name; ?>
                             </div>
@@ -114,6 +103,22 @@
             </div>
         </div>
     </div>
+    <!-- Loading Screen hides container until it has finished loading -->
+    <div id="loading-screen">
+        <div>Loading Cats...</div>
+    </div>
 </body>
-
+<script>
+    //Fade out then delete the Loading Screen
+    function hideLoadingScreen() {
+        let loadingScreen = document.querySelector("#loading-screen");
+        loadingScreen.classList.add("fade-out");
+        //Wait until fade-out has completed before deleting
+        setTimeout(() => {
+            loadingScreen.remove();
+        }, 1100);
+    }
+    //Fade out loading screen after 400ms
+    setTimeout(hideLoadingScreen, 400);
+</script>
 </html>
