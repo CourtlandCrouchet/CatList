@@ -9,9 +9,9 @@
             $base = $_SERVER['PHP_SELF'];
             $limit = $_GET["limit"] ?? 5;
             $page = $_GET["page"] ?? 0;
-            $breed_id = $_GET["breed_id"] ?? "abys";
             $data = file_get_contents("https://api.thecatapi.com/v1/breeds?limit=" . $limit . "&page=" . $page);
             $dataj = json_decode($data);
+            $breed_id = $_GET["breed_id"] ?? $dataj[0]->id ?? "abys";
 
             //Config Constants
             define("MAX_WIDTH", 1200);
@@ -54,8 +54,8 @@
                 <ul>
                     <?php
                         //Get list of breeds using limit and page offset provided in request variables
-                        $data = file_get_contents("https://api.thecatapi.com/v1/breeds?limit=" . $limit . "&page=" . $page);
-                        $dataj = json_decode($data);
+                        // $data = file_get_contents("https://api.thecatapi.com/v1/breeds?limit=" . $limit . "&page=" . $page);
+                        // $dataj = json_decode($data);
                     ?>
                     <?php foreach ($dataj as $i => $value) : ?>
                         <!-- Cat Breed List Item -->
