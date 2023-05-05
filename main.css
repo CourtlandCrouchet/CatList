@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    /* background-color: #efefef; */
 }
 .row {
     width: 100%;
@@ -68,4 +69,14 @@ li:hover {
 }
 ::marker {
     display: none;
+}
+
+/* Selected Breed */
+#selected-breed-info {
+    font-size: 24px;
+    padding: 0.5em;
+    justify-content: space-between;
+}
+#selected-breed-info>* {
+    margin-right: 1em;
 }

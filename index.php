@@ -81,6 +81,12 @@
                 $breed = json_decode(file_get_contents($urlstring));
             ?>
             <div class="col-right">
+                <div id="selected-breed-info" class="row">
+                    <!-- Selected Breed Name -->
+                    <div>Name: <?= $breed->name ?></div>
+                    <!-- Wikipedia Link -->
+                    <a href="<?= $breed->wikipedia_url ?>">More Info</a>
+                </div>
                 <?php
                     //Get image data for the selected breed
                     $urlstring = "https://api.thecatapi.com/v1/images/search?breed_id=" . $breed_id;
@@ -102,10 +108,6 @@
                     height="<?= $images[0]->height * $scaleFactor ?>px"> </img>
             </div>
         </div>
-        <!-- Selected Breed Name -->
-        <div>Name: <?= $breed->name ?></div>
-        <!-- Wikipedia Link -->
-        <a href="<?= $breed->wikipedia_url ?>">More Info</a>
     </div>
 </body>
 
