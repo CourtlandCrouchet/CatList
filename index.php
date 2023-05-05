@@ -25,7 +25,7 @@
         <!-- Navbar -->
         <div class="navbar">
             <!-- Home Button -->
-            <div onclick="window.location.href='<?= $base ?>'">Home</div>
+            <div onclick="window.location.href='<?= $base . "?limit=" . $limit ?>'">Home</div>
 
             <!-- Previous Page Button -->
             <!-- Disable Previous Button if there is no previous data -->
@@ -46,7 +46,7 @@
             <?php endif; ?>
 
             <!-- Page Number -->
-            <div id="page-number">Page <?= $page ?></div>
+            <div id="page-number">Page <?= intval($page) + 1 ?></div>
         </div>
         <div class="row">
             <div class="col-left">
