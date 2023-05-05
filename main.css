@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+}
+.navbar {
+    border-bottom: 1px solid black;
+    /* padding: 1em 0 1em 1em; */
+    display: flex;
+}
+.navbar>a {
+    font-size: 20px;
+}
+.navbar>a:not(:first-child) {
+    padding-left: 1%;
+    border-left: 1px solid black;
+}
+.navbar>div {
+    font-size: 30px;
+    user-select: none;
+    cursor: pointer;
+    padding: 0.2em 0.5em;
+    border-right: 1px solid black;
+    transition: all .4s;
+}
+.navbar>div:hover {
+    background-color: #a8eaff;
+}
+.navbar>div.disabled {
+    cursor: default;
+    background-color: lightgray;
+}
+.navbar>#page-number {
+    flex-grow: 1;
+    border: none;
+    padding-right: 1.5em;
+    text-align: right;
+    background-color: white;
+    cursor: default;
+}

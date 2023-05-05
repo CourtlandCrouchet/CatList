@@ -18,12 +18,25 @@
             else if($limit > 10) $limit = 10
         ?>
         <!-- Navbar -->
-        <div>
-            <a href="<?= $base ?>">Home</a>
-            <?php $link = $base . "?limit=" . $limit . "&page=" . (intval($page) - 1); ?>
-            <a href="<?= $link ?>">Previous</a>
+        <div class="navbar">
+            <!-- Home Button -->
+            <div onclick="window.location.href='<?= $base ?>'">Home</div>
+
+            <!-- Previous Page Button -->
+            <!-- Disable Previous Button if there is no previous data -->
+            <?php if($page == 0) : ?>
+                <div class="disabled">Previous</div>
+            <?php else : ?>
+                <?php $link = $base . "?limit=" . $limit . "&page=" . (intval($page) - 1); ?>
+                <div onclick="window.location.href='<?= $link ?>'">Previous</div>
+            <?php endif; ?>
+
+            <!-- Next Page Button -->
             <?php $link = $base . "?limit=" . $limit . "&page=" . (intval($page) + 1); ?>
-            <a href="<?= $link ?>">Next</a>
+            <div onclick="window.location.href='<?= $link ?>'">Next</div>
+
+            <!-- Page Number -->
+            <div id="page-number">Page <?= $page ?></div>
         </div>
         <!-- Cat Breed Link List -->
         <ul>
