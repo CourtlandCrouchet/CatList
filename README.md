@@ -1,0 +1,1 @@
+This is a simple PHP web app to allow users to browse cat breeds pulled from the Cats API. Users can select from a list of breeds to see pictures of them and get links to their Wikipedia articles.
