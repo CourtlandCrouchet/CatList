@@ -64,6 +64,11 @@ li {
     box-shadow: 1px 1px 5px 0 black;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, .26);
 }
+li.active {
+    /* background-color: #dfdfff; */
+    background-color: #dbdbfd;
+    border: 2px solid black;
+}
 li:hover {
     background-color: #babaf1;
 }

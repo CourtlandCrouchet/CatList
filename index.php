@@ -61,7 +61,7 @@
                         <!-- Cat Breed List Item -->
                         <?php $link = $base . "?limit=" . $limit . "&page=" . $page . "&breed_id=" . $dataj[$i]->id; ?>
                         <li onclick="window.location.href='<?= $link ?>'"
-                        class="breed-btn<? if($dataj[$i]->id == $breed_id) echo ' active'?>">
+                        class="breed-btn<?= $dataj[$i]->id == $breed_id ? ' active' : '' ?>">
                             <!-- <a href="<?= $link ?>">
                                 <div>
                                     <?php echo $dataj[$i]->name; ?>
