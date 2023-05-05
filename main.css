@@ -1,6 +1,9 @@
 body {
     margin: 0;
     /* background-color: #efefef; */
+    /* background-color: #dee5ff; */
+    background-color: #88a1ff;
+    font-family: 'Helvetica';
 }
 .row {
     width: 100%;
@@ -10,17 +13,11 @@ body {
 
 /* Navbar */
 .navbar {
-    border-bottom: 1px solid black;
+    border-bottom: 2px solid black;
     /* padding: 1em 0 1em 1em; */
     display: flex;
     margin-bottom: 2vh;
-}
-.navbar>a {
-    font-size: 20px;
-}
-.navbar>a:not(:first-child) {
-    padding-left: 1%;
-    border-left: 1px solid black;
+    background: linear-gradient(to bottom, rgb(235, 234, 234), rgb(228, 227, 227), rgb(196, 196, 196));
 }
 .navbar>div {
     font-size: 30px;
@@ -30,7 +27,7 @@ body {
     border-right: 1px solid black;
     transition: all .4s;
 }
-.navbar>div:hover {
+.navbar>div:not(#page-number):hover {
     background-color: #a8eaff;
 }
 .navbar>div.disabled {
@@ -42,7 +39,7 @@ body {
     border: none;
     padding-right: 1.5em;
     text-align: right;
-    background-color: white;
+    /* background-color: white; */
     cursor: default;
 }
 
@@ -63,6 +60,9 @@ li {
     transition: all .2s;
     user-select: none;
     cursor: pointer;
+    background-color: white;
+    box-shadow: 1px 1px 5px 0 black;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, .26);
 }
 li:hover {
     background-color: #babaf1;
@@ -79,4 +79,8 @@ li:hover {
 }
 #selected-breed-info>* {
     margin-right: 1em;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, .26);
+}
+img {
+    box-shadow: 1px 1px 5px 1px black;
 }
