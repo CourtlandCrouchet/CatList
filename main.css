@@ -1,6 +1,10 @@
 body {
     margin: 0;
 }
+.row {
+    width: 100%;
+    display: flex;
+}
 .navbar {
     border-bottom: 1px solid black;
     /* padding: 1em 0 1em 1em; */
