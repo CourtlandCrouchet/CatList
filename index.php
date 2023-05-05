@@ -16,6 +16,7 @@
             //Config Constants
             define("MAX_WIDTH", 1200);
             define("MAX_HEIGHT", 700);
+            define("CAT_LIMIT", 67);
 
             //Ensure that $limit is >=5 and <=10
             if($limit < 5) $limit = 5;
@@ -36,8 +37,12 @@
             <?php endif; ?>
 
             <!-- Next Page Button -->
-            <?php $link = $base . "?limit=" . $limit . "&page=" . (intval($page) + 1); ?>
-            <div onclick="window.location.href='<?= $link ?>'">Next</div>
+            <?php if(($page+1) * $limit >= CAT_LIMIT) : ?>
+                <div class="disabled">Next</div>
+            <?php else : ?>
+                <?php $link = $base . "?limit=" . $limit . "&page=" . (intval($page) + 1); ?>
+                <div onclick="window.location.href='<?= $link ?>'">Next</div>
+            <?php endif; ?>
 
             <!-- Page Number -->
             <div id="page-number">Page <?= $page ?></div>
