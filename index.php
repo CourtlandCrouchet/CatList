@@ -91,21 +91,26 @@
                     //Get image data for the selected breed
                     $urlstring = "https://api.thecatapi.com/v1/images/search?breed_id=" . $breed_id;
                     $images = json_decode(file_get_contents($urlstring));
-
-                    //Scale down image until it fits
-                    $scaleFactor = 1;
-                    while($scaleFactor > 0
-                    && (($images[0]->width * $scaleFactor) > MAX_WIDTH
-                    || ($images[0]->height * $scaleFactor) > MAX_HEIGHT)) {
-                        $scaleFactor -= .05;
-                    }
                 ?>
-                <!-- Selected Breed Image -->
-                <img 
-                    src="<?php echo $images[0]->url ?>" 
-                    alt="<?= $breed->name ?>" 
-                    width="<?= $images[0]->width * $scaleFactor ?>px"
-                    height="<?= $images[0]->height * $scaleFactor ?>px"> </img>
+                <?php if(count($images) > 0) : ?>
+                    <?php
+                        //Scale down image until it fits
+                        $scaleFactor = 1;
+                        while($scaleFactor > 0
+                        && (($images[0]->width * $scaleFactor) > MAX_WIDTH
+                        || ($images[0]->height * $scaleFactor) > MAX_HEIGHT)) {
+                            $scaleFactor -= .05;
+                        }
+                    ?>
+                    <!-- Selected Breed Image -->
+                    <img 
+                        src="<?php echo $images[0]->url ?>" 
+                        alt="<?= $breed->name ?>" 
+                        width="<?= $images[0]->width * $scaleFactor ?>px"
+                        height="<?= $images[0]->height * $scaleFactor ?>px"> </img>
+                <?php else : ?>
+                    <div id="no-image-msg">No Images Found for the Selected Breed</div>
+                <?php endif; ?>
             </div>
         </div>
     </div>
